@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form Demo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">Great App</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+    </header>
+    <section><br><br><br>
+      <div class="container col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+          <br />
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h1>Login</h1>
+              </div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                              <i class="glyphicon glyphicon-user" style="width: auto"></i>
+                          </span>
+                          <input id="username" type="text" class="form-control" name="username" placeholder="Username" required />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">
+                              <i class="glyphicon glyphicon-lock" style="width: auto"></i>
+                          </span>
+                          <input id="password" type="password" class="form-control" name="password" placeholder="Password" required />
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <label><input type="checkbox" id="remember" value="remember" class="chk" checked> Remember me</label>
+                      </div>
+                  </div>
+                  <button id="submit" class="btn btn-primary" style="width: 100%">
+                      Login <i class="glyphicon glyphicon-log-in"></i>
+                  </button>
+
+                  <div><br>
+                    <p><a href="#">Forgot your password?</a></p>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">@ 2017 John Vicencio</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
