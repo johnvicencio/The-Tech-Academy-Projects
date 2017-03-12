@@ -1,0 +1,68 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Login */
+
+#login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.fixed-panel {
+  height: 320px;
+}
+.fixed-panel2 {
+  height: 200px;
+}
+
+.bg {
+	background: url('../image/unsplash-nirzar-pangarkar-pizza.jpg') no-repeat center center fixed;
+    color:#fff;
+    background-size:cover;
+}
+.parallax-wrapper {
+  height:700px;
+  padding-top:50px;
+  padding-bottom:50px;
+  overflow:auto;
+}
+
+navbar, .navbar.navbar-default {
+    background-color: white;
+    color: #424242;
+}
