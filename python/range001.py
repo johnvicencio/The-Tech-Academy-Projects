@@ -3,7 +3,7 @@
 
 # The Tech Academy
 # Python: range function drill
-# Python 2
+# Python 3
 
 
 # 1. Start IDLE and use the Python range() function with one parameter to display the

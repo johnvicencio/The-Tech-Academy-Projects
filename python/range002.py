@@ -3,7 +3,7 @@
 
 # The Tech Academy
 # Python: range function drill
-# Python 2
+# Python 3
 
 
 
@@ -11,4 +11,4 @@
 # 3 2 1 0
 
 for i in range(3, 0, -1):
-    print i,
+    print(i, end=' ')
