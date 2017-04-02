@@ -1,0 +1,25 @@
+ASP.NET MVC 5 Essential Training
+
+GO to C:\Sites\Lynda\ASPNETMVC\
+
+Install Visual Studio
+
+Download and unzipped files with START and FINAL folders 
+
+Understanding MVC...
+
+Separation of concerns:
+Model - data and business logic
+View - presentation and UI
+Controller - user actions and control flow
+
+
+How requests are handled by actions? 
+
+1. Start a project: 
+    File > New Project > Visual C# > ASP.NET Web Application > Name your project > Select location > MVC > Add unit tests > OK
+2. Update Nuget packages: 
+    Right click the solution > Manage Nuget > EntityFramework, ASP, Bootstrap, or just update all! > Accept all
+3. Set main application to the start up project: Right click on application > Set as Startup Project
+
+4. See the three main folders to work on on MVC: Models, Views, Controllers folders
