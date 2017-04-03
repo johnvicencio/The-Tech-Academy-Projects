@@ -59,7 +59,7 @@ def move_daily_file():
             file_created = datetime.fromtimestamp(file_stamp) # translate to datetime to be calculated
             diff = (now - file_created).days # get the days of the difference
             # start moving them if previous 24 hours but not more than that
-            if (diff >= 1 and diff < 2 ):
+            if (diff <= 1):
                 destination_file = os.path.join(destination, file)
                 shutil.move(source_file, destination_file)
 
