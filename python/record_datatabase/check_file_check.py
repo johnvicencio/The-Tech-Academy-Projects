@@ -40,8 +40,8 @@ def fetch_record():
     c = conn.cursor()
     now = str(datetime.now())
     c.execute("SELECT * FROM FileCreated ORDER BY LastCreated LIMIT 1")
-    result = c.fetchall()
-    return (result)
+    for row in c.fetchall():
+        return ''.join(row)
     conn.commit()
     conn.close()
 
@@ -65,7 +65,7 @@ def gui():
     button = Button(root, text='Move Now', command = move_file)
     button.pack()
 
-    label_bottom = Label(root, text = "Last file checked")
+    label_bottom = Label(root, text = "Last file checked processed:")
     label_bottom.pack()
     var = StringVar()
     var.set(fetch_record())
@@ -90,7 +90,7 @@ def destination_folder():
     dirname = filedialog.askdirectory()
     destination = dirname + "/"
     destination_path.append(destination)
-    messagebox.showinfo("Message", "Desitnation Folder Selected")
+    messagebox.showinfo("Message", "Destination Folder Selected")
 
 #define the move file event
 def move_file():
@@ -116,4 +116,7 @@ def move_file():
                 messagebox.showinfo("Message", "OK to move " + file +"?")
                 count += 1
     if count > 0:
-        ins
+        insert_record()
+
+if __name__== "__main__":
+    gui()
