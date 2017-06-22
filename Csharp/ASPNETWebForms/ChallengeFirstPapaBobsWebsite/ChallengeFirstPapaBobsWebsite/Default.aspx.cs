@@ -34,13 +34,12 @@ namespace ChallengeFirstPapaBobsWebsite
             total = (redPepperCheckBox.Checked) ? total + .75 : total;
 
             if (anchoviesCheckBox.Checked) total += 2.0;
-
             if ((pepperoniCheckBox.Checked
-                && greenPepperCheckBox.Checked
-                && anchoviesCheckBox.Checked)
-                || (pepperoniCheckBox.Checked
-                && redPepperCheckBox.Checked
-                && onionCheckBox.Checked))
+            && greenPepperCheckBox.Checked
+            && anchoviesCheckBox.Checked)
+            || (pepperoniCheckBox.Checked
+            && redPepperCheckBox.Checked
+            && onionCheckBox.Checked))
             {
                 total -= 2.0;
             }
