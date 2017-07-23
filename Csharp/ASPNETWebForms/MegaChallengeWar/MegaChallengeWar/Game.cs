@@ -23,20 +23,16 @@ namespace MegaChallengeWar
             Deck deck = new Deck();
             string result = deck.Deal(_player1, _player2);
 
-            //return deck.Deal(_player1, _player2);
+            result += "<h3>Begin battle ...</h3>";
             int round = 0;
             while (_player1.Cards.Count != 0 && _player2.Cards.Count != 0)
             {
-                Card player1Card = getCard(_player1);
-                Card player2Card = getCard(_player2);
-
-                performEvaluation(_player1, _player2, player1Card, player2Card);
+                Battle battle = new Battle();
+                result += battle.PerformBattle(_player1, _player2);
 
                 round++;
                 if (round > 20)
                     break;
-
-
             }
             // Determine the winner
             result += determineWinner();
@@ -44,22 +40,22 @@ namespace MegaChallengeWar
 
         }
 
-        private Card getCard(Player player)
-        {
-            Card card = player.Cards.ElementAt(0);
-            player.Cards.Remove(card);
-            _bounty.Add(card);
-            return card;
-        }
+        //private Card getCard(Player player)
+        //{
+        //    Card card = player.Cards.ElementAt(0);
+        //    player.Cards.Remove(card);
+        //    _bounty.Add(card);
+        //    return card;
+        //}
 
-        private void performEvaluation(Player player1, Player player2, Card card1, Card card2)
-        {
-            if (card1.CardValue() > card2.CardValue())
-                player1.Cards.AddRange(_bounty);
-            else
-                player2.Cards.AddRange(_bounty);
-            _bounty.Clear();
-        }
+        //private void performEvaluation(Player player1, Player player2, Card card1, Card card2)
+        //{
+        //    if (card1.CardValue() > card2.CardValue())
+        //        player1.Cards.AddRange(_bounty);
+        //    else
+        //        player2.Cards.AddRange(_bounty);
+        //    _bounty.Clear();
+        //}
 
 
         private string determineWinner()
