@@ -7,3 +7,8 @@ P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\Pap
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.dll
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.pdb
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.csprojResolveAssemblyReference.cache
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\bin\Debug\PapaBob.DTO.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\bin\Debug\PapaBob.DTO.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.csprojResolveAssemblyReference.cache
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBob.DTO\obj\Debug\PapaBob.DTO.pdb

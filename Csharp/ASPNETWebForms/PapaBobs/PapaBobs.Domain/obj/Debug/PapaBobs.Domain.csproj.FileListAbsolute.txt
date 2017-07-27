@@ -20,3 +20,14 @@ P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\Pap
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.csprojResolveAssemblyReference.cache
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.dll
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBobs.Domain.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBobs.Domain.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBob.DTO.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBobs.Persistence.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\EntityFramework.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBob.DTO.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\PapaBobs.Persistence.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\bin\Debug\EntityFramework.xml
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.csprojResolveAssemblyReference.cache
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Domain\obj\Debug\PapaBobs.Domain.pdb

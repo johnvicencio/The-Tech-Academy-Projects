@@ -22,3 +22,15 @@ P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\Pap
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.dll
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.pdb
 P:\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.csprojResolveAssemblyReference.cache
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\PapaBobs.Persistence.dll.config
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\PapaBobs.Persistence.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\PapaBobs.Persistence.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\EntityFramework.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\PapaBob.DTO.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\PapaBob.DTO.pdb
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\EntityFramework.xml
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.csprojResolveAssemblyReference.cache
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.dll
+C:\DESKTOP\cloud\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.Persistence\obj\Debug\PapaBobs.Persistence.pdb
