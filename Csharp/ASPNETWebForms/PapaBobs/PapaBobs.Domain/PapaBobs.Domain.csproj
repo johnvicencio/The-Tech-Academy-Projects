@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3875542C-B6FB-4FD9-A565-191B08A9EC5C}</ProjectGuid>
+    <ProjectGuid>{58837011-D5F6-4BEB-B041-8A50EEE22222}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PapaBobs.Domain</RootNamespace>
@@ -44,12 +44,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PapaBob.DTO\PapaBob.DTO.csproj">
-      <Project>{28aea8a8-b542-472c-82bd-3e6a192c46d7}</Project>
-      <Name>PapaBob.DTO</Name>
+    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
+      <Project>{26b6c773-bae5-4bb4-9f62-e4f858f02e51}</Project>
+      <Name>PapaBobs.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\PapaBobs.Persistence\PapaBobs.Persistence.csproj">
-      <Project>{cfdba2eb-eaf3-4acb-94e0-c70a7786f264}</Project>
+      <Project>{879918ed-16ee-462a-bbd5-5929461771c2}</Project>
       <Name>PapaBobs.Persistence</Name>
     </ProjectReference>
   </ItemGroup>

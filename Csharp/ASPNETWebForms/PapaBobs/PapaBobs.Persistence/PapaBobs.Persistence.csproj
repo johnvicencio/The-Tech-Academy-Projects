@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFDBA2EB-EAF3-4ACB-94E0-C70A7786F264}</ProjectGuid>
+    <ProjectGuid>{879918ED-16EE-462A-BBD5-5929461771C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PapaBobs.Persistence</RootNamespace>
@@ -73,9 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PapaBob.DTO\PapaBob.DTO.csproj">
-      <Project>{28aea8a8-b542-472c-82bd-3e6a192c46d7}</Project>
-      <Name>PapaBob.DTO</Name>
+    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
+      <Project>{26b6c773-bae5-4bb4-9f62-e4f858f02e51}</Project>
+      <Name>PapaBobs.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

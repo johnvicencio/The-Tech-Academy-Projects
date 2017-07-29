@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PapaBobsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PapaBobsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="OrderId" />
@@ -26,7 +26,8 @@
         <EntityContainer Name="PapaBobsDbModelStoreContainer">
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PapaBobsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,8 +36,8 @@
             <PropertyRef Name="OrderId" />
           </Key>
           <Property Name="OrderId" Type="Guid" Nullable="false" />
-          <Property Name="Size" Type="Int32" Nullable="false" />
-          <Property Name="Crust" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="PapaBobsDbModel.SizeType" Nullable="false" />
+          <Property Name="Crust" Type="PapaBobsDbModel.CrustType" Nullable="false" />
           <Property Name="Sausage" Type="Boolean" Nullable="false" />
           <Property Name="Pepperoni" Type="Boolean" Nullable="false" />
           <Property Name="Onions" Type="Boolean" Nullable="false" />
@@ -45,12 +46,15 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PaymentType" Type="Int32" Nullable="false" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaymentType" Type="PapaBobsDbModel.PaymentType" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PapaBobsDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Orders" EntityType="Self.Order" />
         </EntityContainer>
+        <EnumType Name="SizeType" a:ExternalTypeName="PapaBobs.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="CrustType" a:ExternalTypeName="PapaBobs.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="PaymentType" a:ExternalTypeName="PapaBobs.DTO.Enums.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -60,7 +64,6 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Crust" ColumnName="Crust" />
@@ -72,6 +75,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,0 +1,4 @@
+\\Mac\Home\Projects\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.DTO\bin\Debug\PapaBobs.DTO.dll
+\\Mac\Home\Projects\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.DTO\bin\Debug\PapaBobs.DTO.pdb
+\\Mac\Home\Projects\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.DTO\obj\Debug\PapaBobs.DTO.dll
+\\Mac\Home\Projects\Codes\The_Tech_Academy\The-Tech-Academy-Projects\Csharp\ASPNETWebForms\PapaBobs\PapaBobs.DTO\obj\Debug\PapaBobs.DTO.pdb

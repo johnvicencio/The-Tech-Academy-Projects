@@ -4,7 +4,6 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
         <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="Size" ColumnName="Size" />
           <ScalarProperty Name="Crust" ColumnName="Crust" />
@@ -16,6 +15,7 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
         </MappingFragment>
       </EntityTypeMapping>

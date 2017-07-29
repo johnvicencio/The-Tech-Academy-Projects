@@ -11,7 +11,6 @@ namespace PapaBobs.Web
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            Domain.OrderManager.CreateOrder();
         }
     }
 }
