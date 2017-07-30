@@ -10,6 +10,7 @@ namespace PapaBobs.DTO.Enums
     {
         Regular,
         Think,
-        Thick
+        Thick,
+        Thin
     }
 }

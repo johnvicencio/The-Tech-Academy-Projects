@@ -27,5 +27,6 @@ namespace PapaBobs.Persistence
         public string Zip { get; set; }
         public string Phone { get; set; }
         public PapaBobs.DTO.Enums.PaymentType PaymentType { get; set; }
+        public bool Completed { get; set; }
     }
 }

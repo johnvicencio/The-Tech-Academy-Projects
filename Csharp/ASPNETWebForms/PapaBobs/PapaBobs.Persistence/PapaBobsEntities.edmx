@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PapaBobsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PapaBobsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="OrderId" />
@@ -22,12 +22,29 @@
           <Property Name="Zip" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PaymentType" Type="int" Nullable="false" />
+          <Property Name="Completed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PizzaPrice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SmallSizeCost" Type="smallmoney" Nullable="false" />
+          <Property Name="MediumSizeCost" Type="smallmoney" Nullable="false" />
+          <Property Name="LargeSizeCost" Type="smallmoney" Nullable="false" />
+          <Property Name="ThickCrustCost" Type="smallmoney" Nullable="false" />
+          <Property Name="ThinCrustCost" Type="smallmoney" Nullable="false" />
+          <Property Name="RegularCrustCost" Type="smallmoney" Nullable="false" />
+          <Property Name="SausageCost" Type="smallmoney" Nullable="false" />
+          <Property Name="PepperoniCost" Type="smallmoney" Nullable="false" />
+          <Property Name="OnionsCost" Type="smallmoney" Nullable="false" />
+          <Property Name="GreenPeppersCost" Type="smallmoney" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PapaBobsDbModelStoreContainer">
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PizzaPrice" EntityType="Self.PizzaPrice" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PapaBobsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -48,13 +65,31 @@
           <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PaymentType" Type="PapaBobsDbModel.PaymentType" Nullable="false" />
+          <Property Name="Completed" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PapaBobsDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="PizzaPrices" EntityType="PapaBobsDbModel.PizzaPrice" />
         </EntityContainer>
         <EnumType Name="SizeType" a:ExternalTypeName="PapaBobs.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         <EnumType Name="CrustType" a:ExternalTypeName="PapaBobs.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         <EnumType Name="PaymentType" a:ExternalTypeName="PapaBobs.DTO.Enums.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="PizzaPrice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SmallSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="MediumSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="LargeSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="ThickCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="ThinCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="RegularCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="SausageCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="PepperoniCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="OnionsCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="GreenPeppersCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -64,6 +99,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Crust" ColumnName="Crust" />
@@ -77,6 +113,23 @@
                 <ScalarProperty Name="Zip" ColumnName="Zip" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PizzaPrices">
+            <EntityTypeMapping TypeName="PapaBobsDbModel.PizzaPrice">
+              <MappingFragment StoreEntitySet="PizzaPrice">
+                <ScalarProperty Name="GreenPeppersCost" ColumnName="GreenPeppersCost" />
+                <ScalarProperty Name="OnionsCost" ColumnName="OnionsCost" />
+                <ScalarProperty Name="PepperoniCost" ColumnName="PepperoniCost" />
+                <ScalarProperty Name="SausageCost" ColumnName="SausageCost" />
+                <ScalarProperty Name="RegularCrustCost" ColumnName="RegularCrustCost" />
+                <ScalarProperty Name="ThinCrustCost" ColumnName="ThinCrustCost" />
+                <ScalarProperty Name="ThickCrustCost" ColumnName="ThickCrustCost" />
+                <ScalarProperty Name="LargeSizeCost" ColumnName="LargeSizeCost" />
+                <ScalarProperty Name="MediumSizeCost" ColumnName="MediumSizeCost" />
+                <ScalarProperty Name="SmallSizeCost" ColumnName="SmallSizeCost" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

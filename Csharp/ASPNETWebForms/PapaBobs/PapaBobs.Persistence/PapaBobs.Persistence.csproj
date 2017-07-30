@@ -70,6 +70,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PapaBobsEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PizzaPrice.cs">
+      <DependentUpon>PapaBobsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaPriceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

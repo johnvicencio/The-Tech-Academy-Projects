@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="Size" ColumnName="Size" />
           <ScalarProperty Name="Crust" ColumnName="Crust" />
@@ -17,6 +18,23 @@
           <ScalarProperty Name="Zip" ColumnName="Zip" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PizzaPrices">
+      <EntityTypeMapping TypeName="PapaBobsDbModel.PizzaPrice">
+        <MappingFragment StoreEntitySet="PizzaPrice">
+          <ScalarProperty Name="GreenPeppersCost" ColumnName="GreenPeppersCost" />
+          <ScalarProperty Name="OnionsCost" ColumnName="OnionsCost" />
+          <ScalarProperty Name="PepperoniCost" ColumnName="PepperoniCost" />
+          <ScalarProperty Name="SausageCost" ColumnName="SausageCost" />
+          <ScalarProperty Name="RegularCrustCost" ColumnName="RegularCrustCost" />
+          <ScalarProperty Name="ThinCrustCost" ColumnName="ThinCrustCost" />
+          <ScalarProperty Name="ThickCrustCost" ColumnName="ThickCrustCost" />
+          <ScalarProperty Name="LargeSizeCost" ColumnName="LargeSizeCost" />
+          <ScalarProperty Name="MediumSizeCost" ColumnName="MediumSizeCost" />
+          <ScalarProperty Name="SmallSizeCost" ColumnName="SmallSizeCost" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -17,11 +17,29 @@
     <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PaymentType" Type="PapaBobsDbModel.PaymentType" Nullable="false" />
+    <Property Name="Completed" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityContainer Name="PapaBobsDbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PizzaPrices" EntityType="PapaBobsDbModel.PizzaPrice" />
   </EntityContainer>
   <EnumType Name="SizeType" a:ExternalTypeName="PapaBobs.DTO.Enums.SizeType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
   <EnumType Name="CrustType" a:ExternalTypeName="PapaBobs.DTO.Enums.CrustType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
   <EnumType Name="PaymentType" a:ExternalTypeName="PapaBobs.DTO.Enums.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EntityType Name="PizzaPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SmallSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="MediumSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="LargeSizeCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="ThickCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="ThinCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="RegularCrustCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="SausageCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="PepperoniCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="OnionsCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+    <Property Name="GreenPeppersCost" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+  </EntityType>
 </Schema>
