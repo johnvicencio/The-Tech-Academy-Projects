@@ -1,0 +1,38 @@
+﻿@model AgencyAddressBook.Models.Client
+<div class="row">
+
+    <div class="list-group col-md-12" style="padding-left:10px;">
+        <div class="list-group-item">
+            <aside style="float: right;">
+                <a id="edit" href="/client/edit/@Model.ClientId" data-toggle="tooltip" data-placement="top" title="Edit record"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+            </aside>
+            <h2 class="list-group-item-heading">@Model.FullName</h2>
+            <p class="list-group-item-text">
+                Broker ID @Model.ClientId <small>(Date Created: @Model.DateCreated)</small>
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-address-book-o" aria-hidden="true"></i> @Model.Address, @Model.City, @Model.State @Model.ZipCode
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-phone" aria-hidden="true"></i> @Model.PhoneNumber
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> @Model.Email
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-actions no-color pull-right">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+
+                    </div>
+                }
+                <br />
+            </p>
+
+
+        </div>
+    </div>
+
+
+</div>
+

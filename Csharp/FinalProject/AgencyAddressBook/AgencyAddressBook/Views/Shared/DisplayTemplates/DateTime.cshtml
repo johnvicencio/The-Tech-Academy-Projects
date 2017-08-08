@@ -1,0 +1,10 @@
+﻿@model DateTime?
+@if (Model.HasValue)
+{
+
+    //Display time since date is based on UTC
+
+    @Model.Value.ToLocalTime()
+
+
+}

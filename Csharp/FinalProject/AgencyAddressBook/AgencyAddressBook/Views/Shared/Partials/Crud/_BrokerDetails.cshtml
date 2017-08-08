@@ -1,0 +1,101 @@
+﻿@model AgencyAddressBook.Models.Broker
+
+<div class="row">
+    <div class="list-group col-md-12" style="padding-left:10px;">
+        <div class="list-group-item">
+            <aside style="float: right;">
+
+                @if (ViewBag.ActionMethod == "brokerdetails")
+                {
+                    <a id="delete" href="/proposal-request/delete-broker/@Model.Id" data-toggle="tooltip" data-placement="top" title="Delete record"><i class="fa fa-trash fa-lg fa-2x" aria-hidden="true"></i></a><br /><br />
+                }
+                else
+                {
+                    <a id="edit" href="/broker/edit/@Model.Id" data-toggle="tooltip" data-placement="top" title="Edit record"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                    <a id="delete" href="/broker/delete/@Model.Id" data-toggle="tooltip" data-placement="top" title="Delete record"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a><br /><br />
+                }
+            </aside>
+            <h2 class="list-group-item-heading">@Model.FullName</h2>
+            <p class="list-group-item-text">
+                Broker ID @Model.Id <small>
+                    
+                    (Created on @*@Model.DateCreated*@  @Html.DisplayFor(modelItem => modelItem.DateCreated, "DateTime"))
+                </small>
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-address-book-o" aria-hidden="true"></i> @Model.Address, @Model.City, @Model.State @Model.ZipCode
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-phone" aria-hidden="true"></i> @Model.PhoneNumber
+            </p>
+            <p class="list-group-item-text">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> @Model.Email
+
+            </p>
+
+        </div>
+    </div>
+
+
+</div>
+
+@if (ViewBag.ActionMethod != "brokerdetails")
+{
+    <div class="row">
+        <div id="clients">
+            <div class="list-group col-md-12" style="padding-left:10px;">
+                <div class="name">
+                    <aside style="float: right;">
+                        <a id="sort-icon" href="#" data-sort="name" class="sort" data-tooltip="tooltip" role="button" aria-expanded="false" data-placement="top" title="Sort"><i class="fa fa-sort"></i></a>
+                    </aside>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="search" style="padding-left: 20px;">Clients</label>
+                            <input style="padding-left: 20px;" class="form-control search" placeholder="Search" />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-md-12">
+                <div class="list">
+                    @foreach (var item in Model.Clients)
+                {
+                        <div class="list-group col-md-6" style="padding-left:10px;">
+                            <div class="list-group-item name">
+                                <aside style="float: right;">
+                                    <a id="edit" href="/@ViewBag.SecondControllerName/edit/@item.ClientId" data-toggle="tooltip" data-placement="top" title="Edit record"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                                    <a id="delete" href="/@ViewBag.SecondControllerName/delete/@item.ClientId" data-toggle="tooltip" data-placement="top" title="Delete record"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a><br /><br />
+                                </aside>
+                                <h4 class="list-group-item-heading"><a href="/@ViewBag.SecondControllerName/details/@item.ClientId">@item.FullName</a></h4>
+                                <p class="list-group-item-text">
+                                    Broker ID @item.ClientId <small>(Date Created: @item.DateCreated)</small>
+                                </p>
+                                <p class="list-group-item-text">
+                                    <i class="fa fa-address-book-o" aria-hidden="true"></i> @item.Address, @item.City, @item.State @item.ZipCode
+                                </p>
+                                <p class="list-group-item-text">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> @item.PhoneNumber
+                                </p>
+                                <p class="list-group-item-text">
+
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i> @item.Email
+
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+}
+

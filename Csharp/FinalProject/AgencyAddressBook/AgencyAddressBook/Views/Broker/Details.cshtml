@@ -1,0 +1,33 @@
+﻿@model AgencyAddressBook.Models.Broker
+
+<div class="container">
+    <aside class="pull-right">
+        @Html.Partial("Partials/_ResultNotifications")
+    </aside>
+    <h1>@ViewBag.Title</h1>
+    <div class="panel panel-@ViewBag.PanelColor">
+        <div class="panel-heading">
+            <aside style="float: right;">
+                <a id="add-icon" href="/@ViewBag.SecondControllerName/create?BrokerId=@Model.Id" data-toggle="tooltip" data-placement="top" title="Add client"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+                <a id="show-icon" href="#" data-toggle="tooltip" data-placement="top" title="Hide clients"><i class="fa fa-list" aria-hidden="true"></i></a>
+            </aside>
+            <p class="panel-title">Broker Details with Clients</p>          
+        </div>
+        <div class="panel-body">
+
+            @Html.Partial("Partials/Crud/_BrokerDetails")
+
+        </div>
+        <div class="panel-footer">
+            @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+            <span class="pull-right">Something here</span>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+

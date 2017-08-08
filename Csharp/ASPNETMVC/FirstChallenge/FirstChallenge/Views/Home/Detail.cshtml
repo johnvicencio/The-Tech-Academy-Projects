@@ -10,8 +10,8 @@
 @{
     var characters = Model.Characters.Select(p => p.Name).ToArray();
     var charactersString = String.Join(", ", characters);
-    <p><strong>Starring: </strong> @charactersString</p>
 }
 
+<p><strong>Starring: </strong> @charactersString</p>
 <hr />
-@Html.ActionLink("Back to All Comics", "Index")
+

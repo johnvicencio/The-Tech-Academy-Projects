@@ -1,0 +1,12 @@
+﻿<span class="dropdown">
+    <a id="sort-icon" href="#" class="dropdown dropdown-toggle" data-tooltip="tooltip" data-toggle="dropdown" role="button" aria-expanded="false" data-placement="top" title="Sort"><i class="fa fa-sort"></i></a>
+    <ul class="dropdown-menu" role="menu">
+
+            <li>@Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.FirstNameSortParm, currentFilter = ViewBag.CurrentFilter })</li>
+            <li>@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastNameSortParm, currentFilter = ViewBag.CurrentFilter })</li>
+            <li>@Html.ActionLink("Proposal ID", "Index", new { sortOrder = ViewBag.ProposalIdSortParm, currentFilter = ViewBag.CurrentFilter })</li>
+            <li>@Html.ActionLink("Email", "Index", new { sortOrder = ViewBag.EmailSortParm, currentFilter = ViewBag.CurrentFilter })</li>
+
+    </ul>
+
+</span>

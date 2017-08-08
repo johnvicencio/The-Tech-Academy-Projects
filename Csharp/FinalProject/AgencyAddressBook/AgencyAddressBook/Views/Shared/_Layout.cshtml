@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Agency Address Book</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                @*container*@
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand" title="Add record">
+                        @*<img src="~/Content/images/dms2sample.png" alt="Logo />*@
+                        Agency Address Book
+                    </a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        @if (ViewBag.ShowSearch == true)
+                        {
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    @Html.Partial("Partials/_NameSearchForm")
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+
+                            </form>
+                        }
+                        <li>@Html.ActionLink("Brokers", "Index", "Broker")</li>
+                        <li>@Html.ActionLink("Clients", "Index", "Client")</li>
+  
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IT <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" target="_blank">Help Desk</a></li>
+                                <li><a href="#" target="_blank">Bug Reports</a></li>
+                                <li><a href="#" target="_blank">Vacation Time Off</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">&copy; @DateTime.Now.Year - @ViewBag.ApplicationName</p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

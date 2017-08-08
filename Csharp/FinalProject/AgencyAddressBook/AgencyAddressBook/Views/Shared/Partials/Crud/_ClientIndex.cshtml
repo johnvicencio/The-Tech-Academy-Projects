@@ -1,0 +1,40 @@
+﻿@model PagedList.IPagedList<AgencyAddressBook.Models.Client>
+@using PagedList.Mvc;
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var ModelId = item.ClientId;
+        var fullName = item.FullName;
+        var email = item.Email;
+        var phone = item.PhoneNumber;
+        var street = item.Address;
+        var city = item.City;
+        var state = item.State;
+        var zipCode = item.ZipCode;
+        var dateCreated = Html.DisplayFor(modelItem => item.DateCreated, "DateTime");
+        <div class="list-group col-md-6" style="padding-left:10px;">
+            <div class="list-group-item">
+                <aside style="float: right;">
+                    <a id="edit" href="/client/edit/@ModelId" title="Edit Record"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                    <a id="delete" href="/client/delete/@ModelId" title="Delete Record"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </aside>
+                <h4 class="list-group-item-heading"><a href="/client/details/@ModelId">@fullName</a> <small>with Company Name, @state</small></h4>
+                <p class="list-group-item-text">
+                    Broker ID @ModelId <small>(Date Created: @Html.DisplayFor(modelItem => item.DateCreated, "DateTime"))</small>
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i> @street, @city, @state @zipCode
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-phone" aria-hidden="true"></i> @phone
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> @email
+                </p>
+            </div>
+        </div>
+
+    }
+</div>
+

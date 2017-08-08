@@ -1,0 +1,27 @@
+﻿@model AgencyAddressBook.Models.Client
+
+<div class="container">
+    <aside class="pull-right">
+        @Html.Partial("Partials/_ResultNotifications")
+    </aside>
+    <h1>@ViewBag.Title</h1>
+    <div class="panel panel-@ViewBag.PanelColor">
+        <div class="panel-heading">
+            <p class="panel-title">Are you sure that you would like to delete this record?</p>
+        </div>
+        <div class="panel-body">
+
+            @Html.Partial("Partials/Crud/_ClientDelete")
+
+        </div>
+        <div class="panel-footer">
+            @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+            <aside style="float: right;">Something here</aside>
+        </div>
+    </div>
+
+
+</div>
+
+
+

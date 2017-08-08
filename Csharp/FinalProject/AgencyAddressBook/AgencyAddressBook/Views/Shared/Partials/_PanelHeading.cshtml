@@ -1,0 +1,186 @@
+﻿@* PANEL HEADER SECTION FOR BROKER VIEW *@
+@if (ViewBag.ControllerName == "broker")
+{
+    if (ViewBag.ActionMethod == "index")
+    {
+        <span class="pull-right">
+            <a id="add-icon" href="/@ViewBag.ControllerName/create" data-toggle="tooltip" data-placement="top" title="Add record"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            @Html.Partial("Partials/_SortBy")
+        </span>
+        <p class="panel-title">List of @ViewBag.Title</p>
+    }
+    else if (ViewBag.ActionMethod == "edit")
+    {
+        <p class="panel-title">Enter accurate info for @Model.FullName.</p>
+    }
+    else if (ViewBag.ActionMethod == "details")
+    {
+        <aside style="float: right;">
+            <a id="add-icon" href="/@ViewBag.SecondControllerName/create?BrokerId=@Model.Id" data-toggle="tooltip" data-placement="top" title="Add client"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            <a id="show-icon" href="#" data-toggle="tooltip" data-placement="top" title="Hide clients"><i class="fa fa-list" aria-hidden="true"></i></a>
+        </aside>
+        <p class="panel-title">Broker Details with Clients</p>
+    }
+    else if (ViewBag.ActionMethod == "delete")
+    {
+        <p class="panel-title">Are you sure that you would like to delete this record?</p>
+    }
+    else // this is for create
+    {
+        <p class="panel-title">Complete the following form.</p>
+    }
+}
+
+
+
+@* PANEL HEADER SECTION FOR CLIENT VIEW *@
+@if (ViewBag.ControllerName == "client")
+{
+    if (ViewBag.ActionMethod == "index")
+    {
+        <span class="pull-right" data-toggle="modal" data-target="#record-exist-modal">
+            <a id="add-icon" class="add-icon" href="#" data-toggle="tooltip" data-placement="top" title="Add record"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            @Html.Partial("Partials/_SortBy")
+        </span>
+        <p class="panel-title">List of @ViewBag.Title</p>
+            <div class="modal" id="record-exist-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Does the broker exist?</h4>
+                        </div>
+                        <div class="modal-body  text-center">
+                            <a data-toggle="modal" data-target="#record-research-first" href="#" class="btn btn-success">Yes</a>
+                            <a href="#" class="btn btn-danger">No</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="record-research-first">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Search for an existing record to add a client</h4>
+                        </div>
+                        <div class="modal-body  text-center">
+                            <a href="/broker" class="btn btn-success">OK</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+    else if (ViewBag.ActionMethod == "edit")
+    {
+        @*<span class="pull-right" data-toggle="modal" data-target="#record-exist-modal">
+        <a id="edit-icon" class="edit-broker" href="#" data-toggle="tooltip" data-placement="top" title="Edit broker"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+    </span>*@
+        <p class="panel-title">Enter accurate info for @Model.Broker.FullName's client</p>
+    }
+    else if (ViewBag.ActionMethod == "details")
+    {
+        <aside style="float: right;">
+            <a id="add-icon" href="/@ViewBag.SecondControllerName/create?ClientId=@Model.ClientId" data-toggle="tooltip" data-placement="top" title="Add client"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            <a id="show-icon" href="#" data-toggle="tooltip" data-placement="top" title="Hide clients"><i class="fa fa-list" aria-hidden="true"></i></a>
+        </aside>
+        <p class="panel-title">Detailed information of the @Model.Broker.FullName's client</p>
+    }
+    else if (ViewBag.ActionMethod == "delete")
+    {
+        <p class="panel-title">Are you sure that you would like to delete this record?</p>
+
+    }
+    else // this is for create
+    {
+        <p class="panel-title">Complete the following form.</p>
+
+    }
+
+
+}
+
+
+
+@* PANEL HEADER SECTION FOR PROPOSAL VIEW *@
+@if (ViewBag.ControllerName == "proposal")
+{
+    if (ViewBag.ActionMethod == "index")
+    {
+        <span class="pull-right" data-toggle="modal" data-target="#record-exist-modal">
+            <a id="add-icon" class="add-icon" href="#" data-toggle="tooltip" data-placement="top" title="Add record"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            @Html.Partial("Partials/_SortBy")
+        </span>
+        <p class="panel-title">List of @ViewBag.Title</p>
+        <div class="modal" id="record-exist-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Does the broker exist?</h4>
+                    </div>
+                    <div class="modal-body  text-center">
+                        <a data-toggle="modal" data-target="#record-research-first" href="#" class="btn btn-success">Yes</a>
+                        <a href="#" class="btn btn-danger">No</a>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="modal" id="record-research-first">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Search for an existing record to add a client</h4>
+                        </div>
+                        <div class="modal-body  text-center">
+                            <a href="/broker" class="btn btn-success">OK</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+    else if (ViewBag.ActionMethod == "edit")
+    {
+        @*<span class="pull-right" data-toggle="modal" data-target="#record-exist-modal">
+                <a id="edit-icon" class="edit-broker" href="#" data-toggle="tooltip" data-placement="top" title="Edit broker"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+            </span>*@
+        <p class="panel-title">Enter accurate info for @Model.Broker.FullName's client</p>
+    }
+    else if (ViewBag.ActionMethod == "details")
+    {
+        <aside style="float: right;">
+            <a id="add-icon" href="/@ViewBag.SecondControllerName/create?ClientId=@Model.ClientId" data-toggle="tooltip" data-placement="top" title="Add client"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+            <a id="show-icon" href="#" data-toggle="tooltip" data-placement="top" title="Hide clients"><i class="fa fa-list" aria-hidden="true"></i></a>
+        </aside>
+        <p class="panel-title">Detailed information of the @Model.Broker.FullName's client</p>
+    }
+    else if (ViewBag.ActionMethod == "delete")
+    {
+        <p class="panel-title">Are you sure that you would like to delete this record?</p>
+
+    }
+    else // this is for create
+    {
+        <p class="panel-title">Complete the following form.</p>
+
+    }
+
+
+}

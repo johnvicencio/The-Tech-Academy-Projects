@@ -1,0 +1,56 @@
+﻿@model PagedList.IPagedList<AgencyAddressBook.Models.Broker>
+@using PagedList.Mvc
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var ModelId = item.Id;
+        var fullName = item.FullName;
+        var email = item.Email;
+        var phone = item.PhoneNumber;
+        var state = item.State;
+        var address = $"{item.Address}, {item.City}, {item.State} {item.ZipCode}";
+        //DateTime? utc = item.DateCreated;
+        //var dateCreated = TimeZoneInfo.ConvertTimeFromUtc(utc, TimeZoneInfo.Local);
+        <div class="list-group col-md-6" style="padding-left:10px;">
+            <div class="list-group-item">
+                <aside style="float: right;">
+                    @if (ViewBag.ActionMethod == "brokerselect")
+                    {
+                        <a id="select-icon" href="/proposal-request/broker/@ModelId"><i class="fa fa-hand-pointer-o fa-2x" aria-hidden="true"></i></a>
+                    }
+                    else
+                    {
+                        <a id="edit" href="/broker/edit/@ModelId" title="Edit Record"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                        <a id="delete" href="/broker/delete/@ModelId" title="Delete Record"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                    }
+                </aside>
+                <h4 class="list-group-item-heading">
+                    @if (ViewBag.ActionMethod == "brokerselect")
+                    {
+                        @fullName <small>with Company Name, @state</small>
+                    }
+                    else
+                    {
+                        <a href="/broker/details/@ModelId">@fullName</a> <small>with Company Name, @state</small>
+                    }
+                    
+                </h4>
+                <p class="list-group-item-text">
+                    Broker ID @ModelId <small>(Date Created: @Html.DisplayFor(modelItem => item.DateCreated, "DateTime"))</small>
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-address-book-o" aria-hidden="true"></i> @address
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-phone" aria-hidden="true"></i> @phone
+                </p>
+                <p class="list-group-item-text">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> @email
+                </p>
+            </div>
+        </div>
+
+    }
+
+</div>

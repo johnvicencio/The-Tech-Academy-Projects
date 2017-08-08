@@ -1,0 +1,33 @@
+﻿@model PagedList.IPagedList<AgencyAddressBook.Models.Broker>
+@using PagedList.Mvc
+
+<div class="container">
+    <aside class="pull-right">
+        @Html.Partial("Partials/_ResultNotifications")
+    </aside>
+    <h1>@ViewBag.Title <sup><span class="badge">@Model.TotalItemCount</span></sup></h1>
+
+    <div class="panel panel-@ViewBag.PanelColor">
+        <div class="panel-heading">
+            <span class="pull-right">
+                <a id="add-icon" href="/@ViewBag.ControllerName/create" data-toggle="tooltip" data-placement="top" title="Add record"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a>
+                @Html.Partial("Partials/_SortBy")
+            </span>
+            <p class="panel-title">List of @ViewBag.Title</p>
+        </div>
+        <div class="panel-body">
+            @Html.Partial("Partials/Crud/_BrokerIndex")
+        </div>
+        <div class="panel-footer">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+        </div>
+    </div>
+</div>
+
+
+
+

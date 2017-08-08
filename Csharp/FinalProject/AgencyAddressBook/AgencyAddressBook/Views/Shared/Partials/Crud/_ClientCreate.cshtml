@@ -1,0 +1,123 @@
+﻿@model AgencyAddressBook.Models.Client
+
+<div class="row">
+
+    <div class="list-group>
+        <p class="list-group-item" style="padding: 20px;">
+
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+                    @Html.AntiForgeryToken()
+
+                    <div>
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <fieldset>
+                            <legend>Broker</legend>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="BrokerId">Broker Name</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("BrokerId", (IEnumerable<SelectListItem>)ViewBag.BrokerId, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                                    @Html.ValidationMessageFor(model => model.BrokerId, "", new { @class = "text-danger" })
+                                    @*<input type="hidden" name="BrokerIdInput" id="BrokerIdInput">
+                                        <select class="input-validation-error form-control editable-input" id="BrokerId" name="BrokerId">
+                                            @foreach (var item in ViewBag.BrokerId as IEnumerable<SelectListItem>)
+                                            {
+                                                <option data-cc="@item.Value" value="@item.Value" @if (item.Value == Model.BrokerId.ToString()) { <text> selected</text>; }>@item.Text</option>
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.BrokerId, "", new { @class = "text-danger" })*@
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Client</legend>
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="FullName">Full Name</label>
+
+                                @*@Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                <div class="col-md-5">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First name" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Lat name" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Address</label>
+
+
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Street" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2"></label>
+
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { @class = "form-control", @placeholder = "State" })
+                                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-3">
+                                    @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zip code" } })
+                                    @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Contact</label>
+                                <div class="col-md-5">
+                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone number"} })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+                                <label class="control-label col-md-2">Date Created</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+                        </fieldset>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Create Record" class="btn btn-primary pull-right" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+
+            </div>
+
+        </p>
+    </div>
+
+
+
+
+</div>
+

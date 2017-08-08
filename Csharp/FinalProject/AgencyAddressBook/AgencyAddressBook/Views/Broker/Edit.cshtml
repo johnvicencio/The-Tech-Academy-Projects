@@ -1,0 +1,23 @@
+﻿@model AgencyAddressBook.Models.Broker
+
+<div class="container">
+    <aside class="pull-right">
+        @Html.Partial("Partials/_ResultNotifications")
+    </aside>
+    <h1>@ViewBag.Title</h1>
+    <div class="panel panel-@ViewBag.PanelColor">
+        <div class="panel-heading">
+            <p class="panel-title">Enter accurate info for @Model.FullName.</p>
+        </div>
+        <div class="panel-body">
+            @Html.Partial("Partials/Crud/_BrokerEdit")
+        </div>
+        <div class="panel-footer">
+           @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+           <span class="pull-right">(Date created in @Html.DisplayFor(modelItem => modelItem.DateCreated, "DateTime"))</span>
+        </div>
+    </div>
+
+
+</div>
+

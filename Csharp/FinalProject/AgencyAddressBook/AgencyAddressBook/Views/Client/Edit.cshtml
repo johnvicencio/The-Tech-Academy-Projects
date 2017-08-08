@@ -1,0 +1,27 @@
+﻿@model AgencyAddressBook.Models.Client
+
+<div class="container">
+    <aside class="pull-right">
+        @Html.Partial("Partials/_ResultNotifications")
+    </aside>
+    <h1>@ViewBag.Title</h1>
+    <div class="panel panel-@ViewBag.PanelColor">
+        <div class="panel-heading">
+            @*<span class="pull-right" data-toggle="modal" data-target="#record-exist-modal">
+            <a id="edit-icon" class="edit-broker" href="#" data-toggle="tooltip" data-placement="top" title="Edit broker"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+        </span>*@
+            <p class="panel-title">Enter accurate info for @Model.Brokers.FullName's client</p>
+        </div>
+        <div class="panel-body">
+            @Html.Partial("Partials/Crud/_ClientEdit")
+        </div>
+        <div class="panel-footer">
+            @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+            | Broker details: <a href="/broker/details/@Model.BrokerId">@Model.Brokers.FullName</a>
+            <span class="pull-right">(Date created in @Html.DisplayFor(modelItem => modelItem.DateCreated, "DateTime"))</span>
+        </div>
+    </div>
+
+
+</div>
+
