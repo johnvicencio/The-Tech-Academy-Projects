@@ -9,13 +9,13 @@ using System.Web.Mvc;
 
 namespace AgencyAddressBook.Controllers
 {
+    [Authorize]
     public class BrokerController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
 
         // GET: Broker
-        [Authorize]
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.Model = "Broker";
@@ -121,7 +121,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Broker/Details/5
-        [Authorize]
         public ActionResult Details(int? id)
         {
             ViewBag.Title = "AAB Broker Details";
@@ -141,7 +140,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Broker/Create
-        [Authorize]
         public ActionResult Create()
         {
             ViewBag.Title = "Create AAB Broker";
@@ -155,7 +153,6 @@ namespace AgencyAddressBook.Controllers
         //[Bind(Include = "FirstName,LastName,Address,City,State,ZipCode,PhoneNumber,Email,DateCreated")] 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Create(Broker broker)
         {
             ViewBag.Title = "Create AAB Broker";
@@ -202,7 +199,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Broker/Edit/5
-        [Authorize]
         public ActionResult Edit(int? id)
         {
             ViewBag.Title = "Edit AAB Broker";
@@ -224,7 +220,6 @@ namespace AgencyAddressBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult EditPost(int? Id)
         {
             ViewBag.Title = "Edit AAB Broker";
@@ -257,7 +252,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Broker/Delete/5
-        [Authorize]
         public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             ViewBag.Title = "Delete AAB Broker";
@@ -280,7 +274,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // POST: Broker/Delete/5
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)

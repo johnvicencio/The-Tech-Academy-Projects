@@ -10,11 +10,11 @@ using System.Web.Mvc;
 
 namespace AgencyAddressBook.Controllers
 {
+    [Authorize]
     public class ClientController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Authorize]
         // Parameters for sort, filter, search, and current page
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
@@ -123,7 +123,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Client/Details/5
-        [Authorize]
         public ActionResult Details(int? id)
         {
             ViewBag.Title = "Client Details";
@@ -141,7 +140,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Client/Create
-        [Authorize]
         public ActionResult Create(int? brokerId)
         {
             ViewBag.Title = "Create Client";
@@ -158,7 +156,6 @@ namespace AgencyAddressBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Create(Client client)
         {
             ViewBag.Title = "Create Client";
@@ -206,7 +203,6 @@ namespace AgencyAddressBook.Controllers
         }
 
         // GET: Client/Edit/5
-        [Authorize]
         public ActionResult Edit(int? id)
         {
             ViewBag.Title = "Edit Clients";
@@ -230,7 +226,6 @@ namespace AgencyAddressBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult EditPost(int? id)
         {
             ViewBag.Title = "Edit Clients";
@@ -289,7 +284,6 @@ namespace AgencyAddressBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Delete(int id)
         {
             ViewBag.Title = "Delete Client Record";

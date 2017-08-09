@@ -7,13 +7,13 @@ namespace AgencyAddressBook.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddBrokerClientModels : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBrokerClientModels));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708081654177_AddBrokerClientModels"; }
+            get { return "201708092020501_Initial"; }
         }
         
         string IMigrationMetadata.Source
