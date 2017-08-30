@@ -1,0 +1,53 @@
+﻿@model IEnumerable<InventoryManagementSystem.Models.MenuItem>
+
+@{
+    ViewBag.Title = "Weekly Report Builder";
+}
+
+<h2>Weekly Report Builder</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantitySold)
+            </th>
+            <th></th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => Model.ToArray()[i].Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => Model.ToArray()[i].Price)
+                </td>
+                <td class="form-group">
+                    @Html.HiddenFor(m => Model.ToArray()[i].ID)
+                    @Html.HiddenFor(m => Model.ToArray()[i].Name)
+                    @Html.HiddenFor(m => Model.ToArray()[i].Price)
+                    @Html.EditorFor(m => Model.ToArray()[i].QuantitySold, "{0:#}", new { Value = "", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => Model.ToArray()[i].QuantitySold, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create Report" class="btn btn-default" />
+        </div>
+    </div>}

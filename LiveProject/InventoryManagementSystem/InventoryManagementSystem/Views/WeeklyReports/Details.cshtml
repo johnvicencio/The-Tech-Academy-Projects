@@ -1,0 +1,103 @@
+﻿@model InventoryManagementSystem.Models.WeeklyReport
+@using InventoryManagementSystem.DAL;
+
+@{
+    ViewBag.Title = "Details";
+    var db = new InventoryContext();
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Weekly Report</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Income)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Income)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profit)
+        </dd>
+        <dt>
+            @Html.Raw("Menu Items Sold")
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.Raw("Menu Item")
+                    </th>
+                    <th>
+                        @Html.Raw("Quantity Sold")
+                    </th>
+                </tr>
+                @foreach (var item in Model.SoldItems)
+                {
+                    <tr>
+                        <td>
+                            @{
+                                var menuItem = db.MenuItems.FirstOrDefault(s => s.ID == item.MenuItemId);
+                            }
+                            @Html.DisplayFor(model => menuItem.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.AmountUsed)
+                        </td>
+                    </tr>
+                                }
+            </table>
+        </dd>
+
+        <dt>
+            @Html.Raw("Ingredients Used")
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.Raw("Ingredient")
+                    </th>
+                    <th>
+                        @Html.Raw("Amount Used")
+                    </th>
+                </tr>
+                @foreach (var item in Model.UsedIngredients)
+                {
+                    <tr>
+                        <td>
+                            @{
+                                var ingredient = db.Ingredients.FirstOrDefault(s => s.Id == item.IngredientId);
+                            }
+                            @Html.DisplayFor(model => ingredient.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.AmountUsed)
+                        </td>
+                    </tr>
+                                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Date.Ticks }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

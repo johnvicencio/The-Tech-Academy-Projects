@@ -1,0 +1,85 @@
+﻿@model IEnumerable<InventoryManagementSystem.Models.Ingredient>
+
+@{
+    ViewBag.Title = "GenerateReport";
+}
+
+<h2>Weekly Totals</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.Raw("Amount Used")
+            </th>
+            <th></th>
+        </tr>
+        @{
+            IDictionary<InventoryManagementSystem.Models.Ingredient, int> IngredientsUsed = InventoryManagementSystem.DAL.Calculations.IngredientsUsedForWeek();
+            IList<double> WeeklyProfit = InventoryManagementSystem.DAL.Calculations.WeeklyProfit(IngredientsUsed);
+            DateTime reportDate = DateTime.Now;
+        }
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+                <td>
+                    @{
+                        int Sold = IngredientsUsed.FirstOrDefault(s => s.Key.Id == item.Id).Value;
+                    }
+                    @Html.Raw(@Sold)
+
+                </td>
+            </tr>
+                        }
+    </table>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Raw("Weekly Total")
+            </th>
+            <th>
+                @Html.Raw("in Dollars")
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Cost of Ingredients")
+            </td>
+            <td>
+                @Html.Raw(WeeklyProfit[0])
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Income from Sales")
+            </td>
+            <td>
+                @Html.Raw(WeeklyProfit[1])
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Raw("Net Profit")
+            </td>
+            <td>
+                @Html.Raw(WeeklyProfit[2])
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="hidden" name="reportDate" value="@reportDate" />
+            <input type="submit" value="Add Report to Database" class="btn btn-default" />
+        </div>
+    </div>
+                        }

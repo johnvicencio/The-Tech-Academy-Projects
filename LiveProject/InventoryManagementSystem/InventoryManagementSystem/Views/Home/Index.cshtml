@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Inventory Management System</h2>
+    <p class="lead">
+        Welcome to the Inventory Management System, designed with a sandwich shop
+        in mind. It could be modified for other applications as well.
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Ingredients</h3>
+        <p>
+            Index of the available ingredients, with the ability to create new ones,
+            edit existing ones, or delete ingredients no longer needed. The "Quantity" is set
+            as a one-to-one reltationship per sandwich. i.e. "1 Wheat" would actually be two
+            slices of bread, or however much bread goes into a single sandwich.
+        </p>
+        <p><a class="btn btn-default" href="~/Ingredients/Index">Go to the INGREDIENTS page!</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Menu Items</h3>
+        <p>
+            Index of the available menu items, with the ability to create new ones,
+            edit existing ones, or delete oness no longer sold. There is currently
+            not a simple way to add what ingredients go into a menu item, and that
+            needs to be hard coded for now.
+        </p>
+        <p><a class="btn btn-default" href="~/MenuItems/Index">Go to the MENU ITEMS page!</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Weekly Report</h3>
+        <p>
+            Our system allows you to create a weekly report based off how many of each
+            menu item you sold. It does all the work for you to calculate total cost of
+            ingredients, income, and profit. The database can store these reports and
+            display all the information in an index, with details on the detail page. Just
+            select "Create New" from the Index to get started building a report.
+        </p>
+        <p><a class="btn btn-default" href="~/WeeklyReports/Index">Go to the WEEKLY REPORT page!</a></p>
+    </div>
+</div>
